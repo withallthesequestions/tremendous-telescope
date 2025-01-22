@@ -27,13 +27,13 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
-	<p>Posts tagged with {tag}</p>
+	<p>Posts tagged withdd {tag}</p>
 	<ul>
 		{
 			posts.map((post) => (
 				<li>
 					<LogLineEntry
-						url={`/tremendous-telescope/logs/${post.id}/`}
+						url={`/logs/${post.id}/`}
 						title={post.data.title}
 						date={post.data.pubDate}
 					/>
