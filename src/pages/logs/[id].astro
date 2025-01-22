@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import BlogPost from '../../layouts/LogEntry.astro';
+import LogEntry from '../../layouts/LogEntry.astro';
 
 export async function getStaticPaths() {
 	const logEntries = await getCollection('logs');
@@ -13,6 +13,6 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<BlogPost frontmatter={entry.data}>
+<LogEntry frontmatter={entry.data}>
 	<Content />
-</BlogPost>
+</LogEntry>

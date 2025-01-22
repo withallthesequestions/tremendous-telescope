@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import LogEntry from '../../../components/LogEntry.astro';
+import LogLineEntry from '../../../components/LogLineEntry.astro';
 
 export async function getStaticPaths() {
 	const publishedEntries = await getCollection('logs', ({ data }) => {
@@ -26,13 +26,13 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<BaseLayout pageTitle={tag}
-	><p>Posts tagged with {tag}</p>
+<BaseLayout pageTitle={tag}>
+	<p>Posts tagged with {tag}</p>
 	<ul>
 		{
 			posts.map((post) => (
 				<li>
-					<LogEntry
+					<LogLineEntry
 						url={`/logs/${post.id}/`}
 						title={post.data.title}
 						date={post.data.pubDate}

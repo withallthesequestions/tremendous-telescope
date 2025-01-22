@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import LogEntry from '../../components/LogEntry.astro';
+import LogLineEntry from '../../components/LogLineEntry.astro';
 
 const publishedLogs = await getCollection('logs', ({ data }) => {
 	return data.draft !== true;
@@ -34,7 +34,7 @@ const pageTitle = 'Logs';
 		{
 			publishedLogs.map((log) => (
 				<li>
-					<LogEntry
+					<LogLineEntry
 						url={`/logs/${log.id}/`}
 						title={log.data.title}
 						date={log.data.pubDate}
