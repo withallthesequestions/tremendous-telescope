@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const publishedLogs = await getCollection('logs', ({ data }) => {
+	return data.draft !== true;
+});
+const tags = [...new Set(publishedLogs.map((logs) => logs.data.tags).flat())];
+
+const pageTitle = 'Log Tags';
+---
+
+<style>
+	.tag {
+		list-style: none;
+	}
+</style>
+<BaseLayout pageTitle={pageTitle}>
+	<div id='tag-display'>
+		<h2>Log Tags</h2>
+		<ul class='tag-list'>
+			{
+				tags.map((tag) => (
+					<li class='tag'>
+						<a href={`/logs/tags/${tag}`}>{tag}</a>,&nbsp;
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</BaseLayout>

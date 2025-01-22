@@ -1,0 +1,18 @@
+---
+import { getCollection, render } from 'astro:content';
+import BlogPost from '../../layouts/LogEntry.astro';
+
+export async function getStaticPaths() {
+	const logEntries = await getCollection('logs');
+	return logEntries.map((entry) => ({
+		params: { id: entry.id },
+		props: { entry },
+	}));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BlogPost frontmatter={entry.data}>
+	<Content />
+</BlogPost>

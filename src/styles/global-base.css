@@ -1,0 +1,24 @@
+:root {
+  --primary: hsl(0, 4%, 7%);
+  --on-primary: hsl(60, 7%, 92%);
+  --accent: hsl(0, 100%, 82%);
+}
+html {
+  background: var(--primary);
+  font-family: 'Jetbrains Mono';
+}
+body {
+  color: var(--on-primary);
+  margin: 0 1.25rem;
+}
+a {
+  color: var(--accent);
+}
+
+main {
+  margin: 1.15rem 0;
+}
+
+h1 {
+  margin: 0.2rem 0 0 0;
+}

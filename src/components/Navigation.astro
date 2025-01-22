@@ -1,0 +1,37 @@
+---
+
+---
+
+<nav>
+	<menu>
+		<li><a href={`/`}>Home</a></li>
+		<li><a href={`/logs`}>Logs</a></li>
+		<li><a href={`/page1`}>Page 1</a></li>
+		<li id='push-end'>
+			<a
+				id='search-link'
+				href={`/search`}
+				>&#x1F50D;</a
+			>
+		</li>
+	</menu>
+</nav>
+
+<style>
+	nav {
+		flex-grow: 1;
+		margin-inline-start: 1.25rem;
+	}
+	menu {
+		display: /* none; */ flex;
+		list-style-type: none;
+		gap: 1.25rem;
+		padding-inline-start: 0;
+	}
+	#push-end {
+		margin-left: auto;
+	}
+	#search-link {
+		text-decoration: none;
+	}
+</style>

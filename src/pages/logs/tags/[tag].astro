@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import LogEntry from '../../../components/LogEntry.astro';
+
+export async function getStaticPaths() {
+	const publishedEntries = await getCollection('logs', ({ data }) => {
+		return data.draft === false;
+	});
+
+	let uniqueTags = [
+		...new Set(publishedEntries.map((entry) => entry.data.tags).flat()),
+	];
+	return uniqueTags.map((tag) => {
+		const filteredPosts = publishedEntries.filter((post) =>
+			post.data.tags.includes(tag)
+		);
+		return {
+			params: { tag },
+			props: { posts: filteredPosts },
+		};
+	});
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout pageTitle={tag}
+	><p>Posts tagged with {tag}</p>
+	<ul>
+		{
+			posts.map((post) => (
+				<li>
+					<LogEntry
+						url={`/logs/${post.id}/`}
+						title={post.data.title}
+						date={post.data.pubDate}
+					/>
+				</li>
+			))
+		}
+	</ul></BaseLayout
+>
