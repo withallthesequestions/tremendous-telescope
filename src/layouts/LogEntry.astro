@@ -18,7 +18,10 @@ const { frontmatter } = Astro.props;
 			{
 				frontmatter.tags?.map((tag: unknown) => (
 					<span class='tag'>
-						<a href={`/logs/tags/${tag}`}>{tag}</a>,&nbsp;
+						<a href={`/tremendous-telescopelogs/tags/${tag}`}>
+							{tag}
+						</a>
+						,&nbsp;
 					</span>
 				))
 			}

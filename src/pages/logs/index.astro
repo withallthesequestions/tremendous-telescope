@@ -17,12 +17,13 @@ const pageTitle = 'Logs';
 <BaseLayout pageTitle={pageTitle}>
 	<div id='tag-container'>
 		<h2>
-			<a href={`/logs/tags/`}>Log Tags</a>
+			<a href={`/tremendous-telescope/logs/tags/`}>Log Tags</a>
 		</h2>
 		{
 			tags.map((tag) => (
 				<span class='tag'>
-					<a href={`/logs/tags/${tag}`}>{tag}</a>,
+					<a href={`/tremendous-telescope/logs/tags/${tag}`}>{tag}</a>
+					,
 				</span>
 			))
 		}

@@ -21,7 +21,10 @@ const pageTitle = 'Log Tags';
 			{
 				tags.map((tag) => (
 					<li class='tag'>
-						<a href={`/logs/tags/${tag}`}>{tag}</a>,&nbsp;
+						<a href={`/tremendous-telescope/logs/tags/${tag}`}>
+							{tag}
+						</a>
+						,&nbsp;
 					</li>
 				))
 			}
