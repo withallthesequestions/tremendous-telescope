@@ -29,7 +29,48 @@ const pageTitle = 'Logs';
 		}
 	</div>
 
+	<br />
+	<div
+		id='box'
+		style='outline: solid 1px white; height: 35px; width: 35px;'
+	>
+	</div><!-- design aid; minimum clickable size -->
+	<br />
 	<h2>Logs</h2>
+
+	<details>
+		<summary>A category</summary>
+		<ul>
+			{
+				publishedLogs.map((log) => (
+					<li>
+						<LogLineEntry
+							url={`/logs/${log.id}/`}
+							title={log.data.title}
+							date={log.data.pubDate}
+						/>
+					</li>
+				))
+			}
+		</ul>
+	</details>
+	<details>
+		<summary>Another category</summary>
+		<ul>
+			{
+				publishedLogs.map((log) => (
+					<li>
+						<LogLineEntry
+							url={`/logs/${log.id}/`}
+							title={log.data.title}
+							date={log.data.pubDate}
+						/>
+					</li>
+				))
+			}
+		</ul>
+	</details>
+
 	<ul>
 		{
 			publishedLogs.map((log) => (
