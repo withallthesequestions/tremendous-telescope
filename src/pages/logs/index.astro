@@ -17,11 +17,11 @@ const pageTitle = 'Logs';
 
 <BaseLayout pageTitle={pageTitle}>
 	<div id='tag-section'>
-		<div
+		<!-- 		<div
 			id='box'
 			style='display: inline-block; outline: solid 1px white; height: 35px; width: 35px;'
 		>
-		</div>
+		</div> -->
 		<h2>
 			<a href={`/tremendous-telescope/logs/tags/`}>Log Tags</a>:
 		</h2>
@@ -33,55 +33,60 @@ const pageTitle = 'Logs';
 			))
 		}
 	</div>
+	<div id='column-wrapper'>
+		<div class='column'>
+			<h2>Logs</h2>
 
-	<h2>Logs</h2>
-
-	<details>
-		<summary>A category</summary>
-		<ul>
-			{
-				publishedLogs.map((log) => (
-					<li>
-						<LogLineEntry
-							url={`/logs/${log.id}/`}
-							title={log.data.title}
-							date={log.data.pubDate}
-						/>
-					</li>
-				))
-			}
-		</ul>
-	</details>
-	<details>
-		<summary>Another category</summary>
-		<ul>
-			{
-				publishedLogs.map((log) => (
-					<li>
-						<LogLineEntry
-							url={`/logs/${log.id}/`}
-							title={log.data.title}
-							date={log.data.pubDate}
-						/>
-					</li>
-				))
-			}
-		</ul>
-	</details>
-
-	<ul>
-		{
-			publishedLogs.map((log) => (
-				<li>
-					<LogLineEntry
-						url={`/logs/${log.id}/`}
-						title={log.data.title}
-						date={log.data.pubDate}
-					/>
-				</li>
-			))
-		}
-	</ul>
+			<ul>
+				{
+					publishedLogs.map((log) => (
+						<li>
+							<LogLineEntry
+								url={`/logs/${log.id}/`}
+								title={log.data.title}
+								date={log.data.pubDate}
+							/>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div class='column'>
+			<h2>Logs 2</h2>
+			<details>
+				<summary>A category</summary>
+				<ul>
+					{
+						publishedLogs.map((log) => (
+							<li>
+								<LogLineEntry
+									url={`/logs/${log.id}/`}
+									title={log.data.title}
+									date={log.data.pubDate}
+								/>
+							</li>
+						))
+					}
+				</ul>
+			</details>
+			<details>
+				<summary>Another category</summary>
+				<ul>
+					{
+						publishedLogs.map((log) => (
+							<li>
+								<LogLineEntry
+									url={`/logs/${log.id}/`}
+									title={log.data.title}
+									date={log.data.pubDate}
+								/>
+							</li>
+						))
+					}
+				</ul>
+			</details>
+		</div>
+	</div>
 </BaseLayout>
 <style>
 	ul {
@@ -90,7 +95,14 @@ const pageTitle = 'Logs';
 		margin: 0;
 	}
 	#tag-section {
-		padding: 0.5rem 0 0.5rem 0;
-		border-bottom: solid white 1px;
+		padding: 0.5rem 0 0.5rem 1rem;
+		margin: 1rem;
+		outline: solid 1px var(--outline);
+	}
+	#column-wrapper {
+		display: flex;
+	}
+	.column {
+		flex-basis: 50%;
 	}
 </style>

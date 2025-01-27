@@ -1,7 +1,10 @@
 :root {
   --primary: hsl(0, 4%, 7%);
-  --on-primary: hsl(60, 7%, 92%);
-  --accent: hsl(0, 100%, 82%);
+  /* --on-primary: hsl(60, 7%, 92%); */ /* old */
+  --on-primary: hsl(0, 0%, 62%);
+  /* --accent: hsl(0, 100%, 82%); */
+  --accent: hsl(0, 70%, 82%);
+  --outline: hsl(0 0% 62%);
 }
 html {
   background: var(--primary);
