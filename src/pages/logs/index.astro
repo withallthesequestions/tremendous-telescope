@@ -11,31 +11,29 @@ const publishedLogs = await getCollection('logs', ({ data }) => {
 	(a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
 ); */
 const tags = [...new Set(publishedLogs.map((log) => log.data.tags).flat())];
+
 const pageTitle = 'Logs';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<div id='tag-container'>
+	<div id='tag-section'>
+		<div
+			id='box'
+			style='display: inline-block; outline: solid 1px white; height: 35px; width: 35px;'
+		>
+		</div>
 		<h2>
-			<a href={`/tremendous-telescope/logs/tags/`}>Log Tags</a>
+			<a href={`/tremendous-telescope/logs/tags/`}>Log Tags</a>:
 		</h2>
 		{
 			tags.map((tag) => (
 				<span class='tag'>
 					<a href={`/tremendous-telescope/logs/tags/${tag}`}>{tag}</a>
-					,
 				</span>
 			))
 		}
 	</div>
 
-	<br />
-	<div
-		id='box'
-		style='outline: solid 1px white; height: 35px; width: 35px;'
-	>
-	</div><!-- design aid; minimum clickable size -->
-	<br />
 	<h2>Logs</h2>
 
 	<details>
@@ -90,5 +88,9 @@ const pageTitle = 'Logs';
 		list-style: none;
 		padding-inline-start: 0;
 		margin: 0;
+	}
+	#tag-section {
+		padding: 0.5rem 0 0.5rem 0;
+		border-bottom: solid white 1px;
 	}
 </style>
