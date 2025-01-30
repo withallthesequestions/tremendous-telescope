@@ -16,22 +16,34 @@ const pageTitle = 'Logs';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<div id='tag-section'>
-		<!-- 		<div
+	<!-- 		<div
 			id='box'
 			style='display: inline-block; outline: solid 1px white; height: 35px; width: 35px;'
 		>
 		</div> -->
+
+	<div id='tag-section'>
 		<h2>
 			<a href={`/tremendous-telescope/logs/tags/`}>Log Tags</a>:
 		</h2>
-		{
+		<!-- 		{
 			tags.map((tag) => (
 				<span class='tag'>
 					<a href={`/tremendous-telescope/logs/tags/${tag}`}>{tag}</a>
 				</span>
 			))
-		}
+		} -->
+		<menu>
+			{
+				tags.map((tag) => (
+					<li class='tag'>
+						<a href={`/tremendous-telescope/logs/tags/${tag}`}>
+							{tag}
+						</a>
+					</li>
+				))
+			}
+		</menu>
 	</div>
 	<div id='column-wrapper'>
 		<div class='column'>
@@ -89,20 +101,36 @@ const pageTitle = 'Logs';
 	</div>
 </BaseLayout>
 <style>
-	ul {
-		list-style: none;
-		padding-inline-start: 0;
+	h2 {
 		margin: 0;
 	}
+
 	#tag-section {
-		padding: 0.5rem 0 0.5rem 1rem;
-		margin: 1rem;
-		outline: solid 1px var(--outline);
+		display: flex;
+		padding: 0 0.5rem;
+		align-items: center;
+		padding: 0.5rem;
+		border-bottom: 1px solid var(--outline);
+	}
+	menu {
+		display: flex;
+		list-style-type: none;
+		gap: 1rem;
+		margin: 0;
+		padding: 0;
+		margin-left: 1rem;
 	}
 	#column-wrapper {
 		display: flex;
+		margin: 0.5rem 0.5rem;
 	}
 	.column {
 		flex-basis: 50%;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		line-height: 1.75;
 	}
 </style>

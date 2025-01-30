@@ -17,11 +17,9 @@ body {
 a {
   color: var(--accent);
 }
-
-main {
-  margin: 0 0.5rem 0.5rem 0.5rem ;
-}
-
 h1 {
   margin: 0.2rem 0 0 0;
+}
+p {
+  line-height: 1.75;
 }
