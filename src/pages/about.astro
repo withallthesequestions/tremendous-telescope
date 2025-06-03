@@ -3,6 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = 'About';
 ---
 
+<BaseLayout pageTitle={pageTitle}>
+	<button id='potato-button'>🥔</button>
+</BaseLayout>
 <style>
 	#potato-button {
 		background-color: black;
@@ -10,6 +13,3 @@ const pageTitle = 'About';
 		font-size: 1620%;
 	}
 </style>
-<BaseLayout pageTitle={pageTitle}>
-	<button id='potato-button'>🥔</button>
-</BaseLayout>
