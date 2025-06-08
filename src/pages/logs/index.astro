@@ -7,11 +7,11 @@ const publishedLogs = await getCollection('logs', ({ data }) => {
 	return data.draft !== true;
 });
 
-// publishedLogs.sort(
-// 	(a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
-// );
+publishedLogs.sort(
+	(a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+
 const tags = [...new Set(publishedLogs.map((log) => log.data.tags).flat())];
-console.log(publishedLogs);
 
 const pageTitle = 'Logs';
 ---
