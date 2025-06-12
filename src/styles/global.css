@@ -2,11 +2,18 @@
     color-scheme: dark;
 } */
 
-html.dark {
-  background-color: #0d0950;
-  color: #fff;
+/* Background grid, to use for design */
+body {
+  background-image: linear-gradient(#ddd 1px, transparent 1px), linear-gradient(to right, #ddd 1px, transparent 1px);
+  background-size: 3rem 3rem;
+  background-position: -1px -1px
 }
 
-.dark .nav-links a {
+html.dark {
+  background-color: #121212;
+  color: #FFFFFF;
+}
+
+.dark .nav-links a, header a {
   color: #fff;
 }
