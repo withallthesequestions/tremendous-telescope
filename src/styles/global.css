@@ -2,18 +2,24 @@
     color-scheme: dark;
 } */
 
-/* Background grid, to use for design */
+
 body {
-  background-image: linear-gradient(#ddd 1px, transparent 1px), linear-gradient(to right, #ddd 1px, transparent 1px);
+  /* Background grid, to use for design. 48px/3rem is my variation on the 40px ideal touch target in mobile UX. */
+  /* background-image: linear-gradient(#737171 1px, transparent 1px), linear-gradient(to right, #737171 1px, transparent 1px);
   background-size: 3rem 3rem;
-  background-position: -1px -1px
+  background-position: -1px -1px; */
 }
 
 html.dark {
-  background-color: #121212;
+  /* This is the latest way to enable dark mode, apparently. The default background-color should be light mode. */
+  background-color: #252424;
   color: #FFFFFF;
 }
+	a {
+		color: salmon;
+	}
 
-.dark .nav-links a, header a {
+  /* Below, set link colors for dark-mode */
+/* .dark .nav-links a, header a {
   color: #fff;
-}
+} */

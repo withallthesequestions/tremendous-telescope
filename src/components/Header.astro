@@ -9,7 +9,16 @@ import ThemeIcon from './ThemeIcon.astro';
 		id='org-name'
 		>Working Title
 	</a>
-	<ThemeIcon />
-	<Navigation />
+	<div>
+		<Navigation />
+		<ThemeIcon />
+	</div>
 </header>
-<style></style>
+<style>
+	header {
+		display: inline;
+	}
+	div {
+		display: inline;
+	}
+</style>

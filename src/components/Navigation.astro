@@ -3,7 +3,7 @@
 ---
 
 <nav class='nav-links'>
-	<menu>
+	<ul>
 		<li><a href={`/tremendous-telescope/`}>Home</a></li>
 		<li><a href={`/tremendous-telescope/logs`}>Logs</a></li>
 		<li><a href={`/tremendous-telescope/about`}>About</a></li>
@@ -15,7 +15,16 @@
 				>&#x1F50D;</a
 			>
 		</li>
-	</menu>
+	</ul>
 </nav>
 
-<style></style>
+<style>
+	nav {
+		display: inline-block;
+	}
+	ul {
+		display: flex;
+		list-style: none;
+		gap: 1rem;
+	}
+</style>
