@@ -3,25 +3,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = 'Home';
 ---
 
+<link
+	href='pagefind/pagefind-ui.css'
+	rel='stylesheet'
+/>
+<script
+	src='pagefind/pagefind-ui.js'
+	is:inline
+></script>
 <BaseLayout pageTitle={pageTitle}>
-	<main>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. In ab a
-			labore asperiores architecto harum veritatis ipsam tempora maxime
-			quia, dolorem, dolores, hic nulla. Sequi officia quo maxime nobis
-			placeat.
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. In ab a
-			labore asperiores architecto harum veritatis ipsam tempora maxime
-			quia, dolorem, dolores, hic nulla. Sequi officia quo maxime nobis
-			placeat.
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. In ab a
-			labore asperiores architecto harum veritatis ipsam tempora maxime
-			quia, dolorem, dolores, hic nulla. Sequi officia quo maxime nobis
-			placeat.
-		</p>
-	</main>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. In ab a labore
+		asperiores architecto harum veritatis ipsam tempora maxime quia,
+		dolorem, dolores, hic nulla. Sequi officia quo maxime nobis placeat.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. In ab a labore
+		asperiores architecto harum veritatis ipsam tempora maxime quia,
+		dolorem, dolores, hic nulla. Sequi officia quo maxime nobis placeat.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. In ab a labore
+		asperiores architecto harum veritatis ipsam tempora maxime quia,
+		dolorem, dolores, hic nulla. Sequi officia quo maxime nobis placeat.
+	</p>
+	<div id='search'></div>
+	<!-- <script>
+		window.addEventListener('DOMContentLoaded', (event) => {
+			// @ts-ignore
+			new PagefindUI({
+				baseUrl: '/tremendous-telescope/',
+				element: '#search',
+				debounceTimeoutMs: 500,
+				showEmptyFilters: false,
+				showSubResults: true,
+			});
+		});
+	</script> -->
 </BaseLayout>

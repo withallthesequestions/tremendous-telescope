@@ -1,11 +1,12 @@
 ---
 import Navigation from './Navigation.astro';
 import ThemeIcon from './ThemeIcon.astro';
+import { base } from 'astro:config/client';
 ---
 
 <header>
 	<a
-		href='/tremendous-telescope/'
+		href={base + `/`}
 		id='org-name'
 		>Working Title
 	</a>
