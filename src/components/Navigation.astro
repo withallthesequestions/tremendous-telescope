@@ -8,12 +8,17 @@ import { base } from 'astro:config/client';
 		<li><a href={base + `/logs`}>Logs</a></li>
 		<li><a href={base + `/about`}>About</a></li>
 
-		<li id='push-end'>
-			<a
-				id='search-link'
-				href={base + `/search`}
-				>&#x1F50D;</a
-			>
+		<li id='push-end'></li>
+		<li>
+			<details>
+				<summary>
+					<a
+						id='search-link'
+						href={base + `/search`}
+						>&#x1F50D;</a
+					></summary
+				>Details go here
+			</details>
 		</li>
 	</ul>
 </nav>

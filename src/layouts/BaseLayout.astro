@@ -7,6 +7,7 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const { pageTitle } = Astro.props;
+import { base } from 'astro:config/client';
 ---
 
 <!doctype html>
@@ -24,14 +25,21 @@ const { pageTitle } = Astro.props;
 		<link
 			rel='icon'
 			type='image/svg+xml'
-			href='/tremendous-telescope/favicon.svg'
+			href={base + `/favicon.svg`}
 		/>
 		<meta
 			name='generator'
 			content={Astro.generator}
 		/>
-
 		<title>{pageTitle}</title>
+		<link
+			href={base + `/pagefind/pagefind-ui.css`}
+			rel='stylesheet'
+		/>
+		<script
+			src={base + `/pagefind/pagefind-ui.js`}
+			is:inline
+		></script>
 	</head>
 	<body>
 		<Header />
@@ -40,6 +48,19 @@ const { pageTitle } = Astro.props;
 		</main>
 		<Footer />
 	</body>
+	<div id='search'></div>
+	<script>
+		window.addEventListener('DOMContentLoaded', (event) => {
+			// @ts-ignore
+			new PagefindUI({
+				baseUrl: '/tremendous-telescope/',
+				element: '#search',
+				debounceTimeoutMs: 500,
+				showEmptyFilters: false,
+				showSubResults: true,
+			});
+		});
+	</script>
 </html>
 <style is:global>
 	/* Some of these shouldn't be global */
