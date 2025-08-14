@@ -8,18 +8,25 @@ import { base } from 'astro:config/client';
 	<a
 		href={base}
 		id='org-name'
-		>Working Title
-	</a>
+		>Working Title</a
+	>
 	<div>
 		<Navigation />
+		<details>
+			<summary> &#x1F50D;</summary>Details go here
+		</details>
 		<ThemeIcon />
 	</div>
 </header>
 <style>
 	header {
-		display: inline;
+		display: flex;
 	}
 	div {
-		display: inline;
+		display: flex;
+		gap: 0.5rem;
+	}
+	summary {
+		list-style-type: none;
 	}
 </style>

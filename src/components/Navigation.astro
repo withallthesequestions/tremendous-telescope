@@ -7,19 +7,6 @@ import { base } from 'astro:config/client';
 		<li><a href={base + `/`}>Home</a></li>
 		<li><a href={base + `/logs`}>Logs</a></li>
 		<li><a href={base + `/about`}>About</a></li>
-
-		<li id='push-end'></li>
-		<li>
-			<details>
-				<summary>
-					<a
-						id='search-link'
-						href={base + `/search`}
-						>&#x1F50D;</a
-					></summary
-				>Details go here
-			</details>
-		</li>
 	</ul>
 </nav>
 
@@ -30,6 +17,8 @@ import { base } from 'astro:config/client';
 	ul {
 		display: flex;
 		list-style: none;
-		gap: 1rem;
+		gap: 0.5rem;
+		padding-inline-start: 1rem;
+		margin: 0;
 	}
 </style>

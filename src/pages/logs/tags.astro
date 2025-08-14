@@ -16,7 +16,7 @@ const pageTitle = 'Log Tags';
 </style>
 <BaseLayout pageTitle={pageTitle}>
 	<div id='tag-display'>
-		<h2>Log Tags</h2>
+		<h2>Log Tag List</h2>
 		<ul class='tag-list'>
 			{
 				tags.map((tag) => (
@@ -24,7 +24,6 @@ const pageTitle = 'Log Tags';
 						<a href={`/tremendous-telescope/logs/tags/${tag}`}>
 							{tag}
 						</a>
-						,&nbsp;
 					</li>
 				))
 			}
