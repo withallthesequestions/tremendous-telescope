@@ -5,8 +5,8 @@
 }
 
 
-  /* body {
- Background grid, to use for design. 48px/3rem is my variation on the 40px ideal touch target in mobile UX. */
+  body {
+ /* Background grid, to use for design. 48px/3rem is my variation on the 40px ideal touch target in mobile UX. */
   /* background-image: linear-gradient(#737171 1px, transparent 1px), linear-gradient(to right, #737171 1px, transparent 1px);
   background-size: 3rem 3rem;
   background-position: -1px -1px; */

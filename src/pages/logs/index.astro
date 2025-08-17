@@ -22,22 +22,18 @@ const pageTitle = 'Logs';
 		style='display: inline-block; outline: solid 1px white; height: 35px; width: 35px;'
 	>
 	</div> -->
-	<div id='tag-section'>
-		<ul id='log-tag-list'>
-			<h2>
-				<a href={`/tremendous-telescope/logs/tags/`}>Log Tags</a>:
-			</h2>
-			{
-				tags.map((tag) => (
-					<li class='tag'>
-						<a href={`/tremendous-telescope/logs/tags/${tag}`}>
-							{tag}
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</div>
+	<ul id='log-tag-list'>
+		<h2>
+			<a href={`/tremendous-telescope/logs/tags/`}>Log Tags</a>:
+		</h2>
+		{
+			tags.map((tag) => (
+				<li class='tag'>
+					<a href={`/tremendous-telescope/logs/tags/${tag}`}>{tag}</a>
+				</li>
+			))
+		}
+	</ul>
 	<div id='column-wrapper'>
 		<div class='column'>
 			<h2>Logs</h2>
@@ -97,11 +93,11 @@ const pageTitle = 'Logs';
 		margin: 0;
 	}
 
-	#tag-section {
+	#log-tag-list {
 		display: flex;
 	}
 	menu {
-		display: flex;
+		displasy: flex;
 		list-style-type: none;
 		gap: 1rem;
 		margin: 0;
