@@ -22,21 +22,26 @@ const pageTitle = 'Logs';
 		style='display: inline-block; outline: solid 1px white; height: 35px; width: 35px;'
 	>
 	</div> -->
-	<ul id='log-tag-list'>
+	<div id='log-tag-list'>
 		<h2>
 			<a href={`/tremendous-telescope/logs/tags/`}>Log Tags</a>:
 		</h2>
-		{
-			tags.map((tag) => (
-				<li class='tag'>
-					<a href={`/tremendous-telescope/logs/tags/${tag}`}>{tag}</a>
-				</li>
-			))
-		}
-	</ul>
+		<ul>
+			{
+				tags.map((tag) => (
+					<li class='tag'>
+						<a href={`/tremendous-telescope/logs/tags/${tag}`}>
+							{tag}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+
 	<div id='column-wrapper'>
 		<div class='column'>
-			<h2>Logs</h2>
+			<h2>Col 1</h2>
 			<ul>
 				{
 					publishedLogs.map((log) => (
@@ -52,7 +57,7 @@ const pageTitle = 'Logs';
 			</ul>
 		</div>
 		<div class='column'>
-			<h2>Logs 2</h2>
+			<h2>Col 2</h2>
 			<details>
 				<summary>A category</summary>
 				<ul>
@@ -91,21 +96,17 @@ const pageTitle = 'Logs';
 <style>
 	h2 {
 		margin: 0;
+		align-content: center;
 	}
 
-	#log-tag-list {
+	#log-tag-list,
+	#log-tag-list > ul {
 		display: flex;
-	}
-	menu {
-		displasy: flex;
-		list-style-type: none;
 		gap: 1rem;
-		margin: 0;
-		padding: 0;
+		align-items: center;
 	}
 	#column-wrapper {
 		display: flex;
-		margin: 0.5rem 0.5rem;
 	}
 	.column {
 		flex-basis: 50%;

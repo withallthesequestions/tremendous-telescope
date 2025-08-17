@@ -14,14 +14,16 @@ const { frontmatter } = Astro.props;
 	<h1>{frontmatter.title}</h1>
 	<div id='byline'>
 		<FormattedDate date={frontmatter.pubDate} /><p class='tag-list'>
-			&nbsp; <!-- Tags -->
+			<!-- Tags -->
 			{
 				frontmatter.tags?.map((tag: unknown) => (
 					<span class='tag'>
-						<a href={`/tremendous-telescope/logs/tags/${tag}`}>
+						<a
+							class='tag'
+							href={`/tremendous-telescope/logs/tags/${tag}`}
+						>
 							{tag}
 						</a>
-						,
 					</span>
 				))
 			}
@@ -38,5 +40,6 @@ const { frontmatter } = Astro.props;
 	.tag-list {
 		margin: 0;
 		flex: 1;
+		padding-inline-start: 1em;
 	}
 </style>

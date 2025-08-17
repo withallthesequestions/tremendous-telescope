@@ -10,22 +10,17 @@ import { base } from 'astro:config/client';
 		id='org-name'
 		>Working Title</a
 	>
-	<div>
-		<Navigation />
-		<details>
-			<summary> &#x1F50D;</summary>Details go here
-		</details>
-		<ThemeIcon />
-	</div>
+	<Navigation />
+	<details>
+		<summary> &#x1F50D; </summary>Search bar goes here
+	</details>
+	<ThemeIcon />
 </header>
 <style>
 	header {
 		display: flex;
 	}
-	div {
-		display: flex;
-		gap: 0.5rem;
-	}
+
 	summary {
 		list-style-type: none;
 	}
