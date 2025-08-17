@@ -17,6 +17,11 @@ const pageTitle = 'Logs';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+	<!-- <div
+		id='box'
+		style='display: inline-block; outline: solid 1px white; height: 35px; width: 35px;'
+	>
+	</div> -->
 	<div id='tag-section'>
 		<ul id='log-tag-list'>
 			<h2>
@@ -91,8 +96,11 @@ const pageTitle = 'Logs';
 	h2 {
 		margin: 0;
 	}
-	#log-tag-list {
-		align-items: center;
+
+	#tag-section {
+		display: flex;
+	}
+	menu {
 		display: flex;
 		list-style-type: none;
 		gap: 1rem;
