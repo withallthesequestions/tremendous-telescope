@@ -1,33 +1,39 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<h1>Register</h1>
-<form method='POST'>
-	<label>
-		Username:
+<BaseLayout pageTitle='Register'>
+	<h1>Register</h1>
+	<form method='POST'>
+		<label>
+			Username:
+			<input
+				type='text'
+				name='username'
+				required
+			/>
+		</label>
+		<label>
+			Email:
+			<input
+				type='email'
+				name='email'
+				required
+			/>
+		</label>
+		<label>
+			Password:
+			<input
+				type='password'
+				name='password'
+				required
+				minlength='6'
+			/>
+		</label>
 		<input
-			type='text'
-			name='username'
-			required
+			type='submit'
+			value='Submit'
+			onclick="console.log('hi')"
 		/>
-	</label>
-	<label>
-		Email:
-		<input
-			type='email'
-			name='email'
-			required
-		/>
-	</label>
-	<label>
-		Password:
-		<input
-			type='password'
-			name='password'
-			required
-			minlength='6'
-		/>
-	</label>
-	<button>Submit</button>
-</form>
+	</form>
+</BaseLayout>
