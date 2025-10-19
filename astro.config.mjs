@@ -4,7 +4,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-	// site: 'https://withallthesequestions.github.io',
+	site: 'https://tremendous-telescope-six.vercel.app/',
 	/* base: '/tremendous-telescope', */
 	integrations: [mdx()],
 });
