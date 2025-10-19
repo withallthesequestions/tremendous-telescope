@@ -1,6 +1,5 @@
 ---
 import { base } from 'astro:config/client';
-console.log(base);
 ---
 
 <nav class='nav-links'>
@@ -9,6 +8,7 @@ console.log(base);
 		<li><a href={base + `/logs`}>Logs</a></li>
 		<li><a href={base + `/about`}>About</a></li>
 		<li><a href={base + `/register`}>Register</a></li>
+		<li><a href={`/register`}>Clean Register</a></li>
 	</ul>
 </nav>
 
