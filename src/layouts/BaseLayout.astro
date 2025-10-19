@@ -5,9 +5,7 @@ interface Props {
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-
 const { pageTitle } = Astro.props;
-import { base } from 'astro:config/client';
 ---
 
 <!doctype html>
@@ -25,7 +23,7 @@ import { base } from 'astro:config/client';
 		<link
 			rel='icon'
 			type='image/svg+xml'
-			href={base + `/favicon.svg`}
+			href={`/favicon.svg`}
 		/>
 		<meta
 			name='generator'
@@ -33,11 +31,11 @@ import { base } from 'astro:config/client';
 		/>
 		<title>{pageTitle}</title>
 		<link
-			href={base + `/pagefind/pagefind-ui.css`}
+			href={`/pagefind/pagefind-ui.css`}
 			rel='stylesheet'
 		/>
 		<script
-			src={base + `/pagefind/pagefind-ui.js`}
+			src={`/pagefind/pagefind-ui.js`}
 			is:inline
 		></script>
 	</head>
@@ -48,23 +46,8 @@ import { base } from 'astro:config/client';
 		</main>
 		<Footer />
 	</body>
-	<div id='search'></div>
-	<script>
-		window.addEventListener('DOMContentLoaded', (event) => {
-			// @ts-ignore
-			new PagefindUI({
-				baseUrl: '/tremendous-telescope/',
-				element: '#search',
-				debounceTimeoutMs: 500,
-				showEmptyFilters: false,
-				showSubResults: true,
-			});
-		});
-	</script>
 </html>
-<style is:global>
-	/* Some of these shouldn't be global */
-
+<style>
 	/* Individual page styling */
 	h2 {
 		display: inline-block;

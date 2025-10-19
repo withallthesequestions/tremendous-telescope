@@ -1,18 +1,23 @@
 ---
 import Navigation from './Navigation.astro';
 import ThemeIcon from './ThemeIcon.astro';
-import { base } from 'astro:config/client';
+import Search from 'astro-pagefind/components/Search';
 ---
 
 <header>
 	<a
-		href={base}
+		href={`/`}
 		id='org-name'
 		>Working Title</a
 	>
 	<Navigation />
 	<details>
-		<summary> &#x1F50D; </summary>Search bar goes here
+		<summary> &#x1F50D; </summary>
+		<Search
+			id='search'
+			className='pagefind-ui'
+			uiOptions={{ showImages: false }}
+		/>
 	</details>
 	<ThemeIcon />
 </header>
