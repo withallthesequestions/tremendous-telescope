@@ -24,15 +24,13 @@ const pageTitle = 'Logs';
 	</div> -->
 	<div id='log-tag-list'>
 		<h2>
-			<a href={`/tremendous-telescope/logs/tags/`}>Log Tags</a>:
+			<a href={`/logs/tags/`}>Log Tags</a>:
 		</h2>
 		<ul>
 			{
 				tags.map((tag) => (
 					<li class='tag'>
-						<a href={`/tremendous-telescope/logs/tags/${tag}`}>
-							{tag}
-						</a>
+						<a href={`/logs/tags/${tag}`}>{tag}</a>
 					</li>
 				))
 			}
